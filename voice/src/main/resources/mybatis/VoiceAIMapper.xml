@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.voice.mapper.VoiceAIMapper">
+
+    <select id="selectVoiceAI" resultType="com.example.voice.vo.VoiceAIVO">
+
+        SELECT
+            GROUP_CONCAT(if(a.parameter_code='app_id',a.parameter_value,null)) as appId,
+            GROUP_CONCAT(if(a.parameter_code='api_key',a.parameter_value,null)) as apiKey,
+            GROUP_CONCAT(if(a.parameter_code='secret_key',a.parameter_value,null)) as secretKey,
+            GROUP_CONCAT(if(a.parameter_code='ai_url',a.parameter_value,null)) as aiUrl
+        FROM
+            crm_sys_parameters a
+        WHERE
+            a.type ='百度AI'
+        and a.is_deleted =0 and a.is_invalid =0
+        group by a.type
+
+    </select>
+
+</mapper>
