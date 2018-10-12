@@ -56,16 +56,15 @@ public class VoiceAIService {
     public boolean convertMP32Pcm (String mp3filepath,String pcmfilepath) {
         String mp3 = UUID.randomUUID().toString();
         //Windows
-//        String cmdDos = "D:\\tools\\ffmpeg-20181007-0a41a8b-win64-static\\bin\\ffmpeg -i "+mp3filepath+ " -vn  -acodec libmp3lame -ac 1 -qscale:a 4 -ar 16000  "+ "D:\\tools\\"+ mp3+".mp3";
-        //Linux
-        String linuxTerminal = "ffmpeg -i "+mp3filepath+" -vn  -acodec libmp3lame -ac 1 -qscale:a 4 -ar 16000  /crm/tmp/"+ mp3 + ".mp3";
+        String cmdDos = "D:\\tools\\ffmpeg-20181007-0a41a8b-win64-static\\bin\\ffmpeg -i "+mp3filepath+ " -vn  -acodec libmp3lame -ac 1 -qscale:a 4 -ar 16000  "+ "D:\\tools\\"+ mp3+".mp3";
+        //linux
+        //        String linuxTerminal = "/crm/ffmpeg-4.0.2-64bit-static/ffmpeg -i "+mp3filepath+" -vn  -acodec libmp3lame -ac 1 -qscale:a 4 -ar 16000  /crm/tmp/"+ mp3 + ".mp3";
         try {
-            //windows
-            //Runtime.getRuntime().exec(cmdDos);
+            Runtime.getRuntime().exec(cmdDos);
             //linux
-            Runtime runTime = Runtime.getRuntime();
-            runTime.exec(linuxTerminal);
-            Thread.sleep(1200);
+//            Runtime runTime = Runtime.getRuntime();
+//            runTime.exec(linuxTerminal);
+            Thread.sleep(1500);
             String mm = "D:/tools/"+mp3+".mp3";
             AudioInputStream audioInputStreams = getPcmAudioInputStream(mm);
             logger.info("D:/tools/"+mp3+".mp3");
