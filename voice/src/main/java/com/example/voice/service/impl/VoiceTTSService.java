@@ -9,10 +9,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.Base64;
-import java.util.Map;
-import java.util.Random;
-import java.util.TreeMap;
+import java.util.*;
 import java.net.URLEncoder;
 import java.io.OutputStream;
 import java.io.InputStream;
@@ -273,13 +270,28 @@ public class VoiceTTSService {
 
 
     public String voiceToWord(String fileURI) {
-        VoiceTTSVO voiceTTSVO = voiceAIMapper.selectVoiceTTS();
-        setConfig(voiceTTSVO.getSecretId(),voiceTTSVO.getSecretKey(),
-                voiceTTSVO.getEngSerViceType(),voiceTTSVO.getSourceType(),voiceTTSVO.getVoiceFormat(),fileURI);
 
-        String result = sendVoice();
-        System.out.println(result);
-        return result;
+        String mp3 = UUID.randomUUID().toString();
+        //Windows
+        String cmdDos = "D:\\tools\\ffmpeg-20181007-0a41a8b-win64-static\\bin\\ffmpeg -i "+fileURI+ " -vn  -acodec libmp3lame -ac 1 -qscale:a 4 -ar 16000  "+ "D:\\mp3\\"+ mp3+".mp3";
+
+        try{
+            Runtime.getRuntime().exec(cmdDos);
+            Thread.sleep(1000);
+            String mm = "D:\\mp3\\"+mp3+".mp3";
+            System.out.println(mm);
+            VoiceTTSVO voiceTTSVO = voiceAIMapper.selectVoiceTTS();
+            setConfig(voiceTTSVO.getSecretId(),voiceTTSVO.getSecretKey(),
+                    voiceTTSVO.getEngSerViceType(),voiceTTSVO.getSourceType(),voiceTTSVO.getVoiceFormat(),mm);
+
+            String result = sendVoice();
+            System.out.println(result);
+            return result;
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
 
     }
 
