@@ -1,6 +1,7 @@
 package com.example.voice.mapper;
 
 import com.example.voice.vo.VoiceAIVO;
+import com.example.voice.vo.VoiceTTSVO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -11,5 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface VoiceAIMapper {
 
     VoiceAIVO selectVoiceAI();
+
+    VoiceTTSVO selectVoiceTTS();
 
 }

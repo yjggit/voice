@@ -10,12 +10,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.Mac;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
-import java.io.File;
-import java.util.UUID;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.*;
 
 /**
  * @author jianhui.Yang
@@ -105,4 +111,21 @@ public class VoiceAIService {
                 voiceAIVO.getApiKey(),voiceAIVO.getSecretKey());
         return res;
     }
+
+
+
+//    public String voiceToWord(String fileURI) {
+//        setConfig("AKID31NbfXbpBLJ4kGJrytc9UfgVAlGltJJ8","kKm26uXCgLtGRWVJvKtGU0LYdWCgOvGP",
+//                "16","0","mp3",fileURI);
+//
+//        String result = sendVoice();
+//        log.info("语音转换结果为: "+result);
+//        return result;
+//
+//    }
+
+
+
+
+
 }
