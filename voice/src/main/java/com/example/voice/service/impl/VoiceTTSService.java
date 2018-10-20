@@ -169,7 +169,7 @@ public class VoiceTTSService {
         return 0;
     }
 
-    public static String sendVoice() {
+    public static String sendVoice()  {
         Map<String, String> reqMap = new TreeMap();
         reqMap.put("Action", "SentenceRecognition");
         reqMap.put("SecretId", SecretId);
@@ -203,7 +203,8 @@ public class VoiceTTSService {
 
 
             } catch (Exception e) {
-                e.printStackTrace();
+                return "音频文件解析错误，请重新录入！！！";
+//                e.printStackTrace();
             }
         } else {
             return "";
@@ -274,12 +275,12 @@ public class VoiceTTSService {
         String mp3 = UUID.randomUUID().toString();
         //Windows
         String cmdDos = "D:\\tools\\ffmpeg-20181007-0a41a8b-win64-static\\bin\\ffmpeg -i "+fileURI+ " -vn  -acodec libmp3lame -ac 1 -qscale:a 4 -ar 16000  "+ "D:\\mp3\\"+ mp3+".mp3";
-
+        System.out.println(cmdDos);
         try{
             Runtime.getRuntime().exec(cmdDos);
-            Thread.sleep(1100);
+            Thread.sleep(1500);
             String mm = "D:\\mp3\\"+mp3+".mp3";
-            System.out.println(mm);
+//            System.out.println(mm);
             VoiceTTSVO voiceTTSVO = voiceAIMapper.selectVoiceTTS();
             setConfig(voiceTTSVO.getSecretId(),voiceTTSVO.getSecretKey(),
                     voiceTTSVO.getEngSerViceType(),voiceTTSVO.getSourceType(),voiceTTSVO.getVoiceFormat(),mm);
