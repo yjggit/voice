@@ -277,7 +277,7 @@ public class VoiceTTSService {
 
         try{
             Runtime.getRuntime().exec(cmdDos);
-            Thread.sleep(1000);
+            Thread.sleep(1100);
             String mm = "D:\\mp3\\"+mp3+".mp3";
             System.out.println(mm);
             VoiceTTSVO voiceTTSVO = voiceAIMapper.selectVoiceTTS();

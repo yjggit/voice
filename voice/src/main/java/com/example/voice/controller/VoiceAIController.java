@@ -40,8 +40,8 @@ public class VoiceAIController {
         if (StringUtils.isEmpty(fileURL)) {
             throw new Exception("mp3文件为空");
         }
-        String reslut = voiceTTSService.voiceToWord(fileURL);
-        return reslut;
+        String result = voiceTTSService.voiceToWord(fileURL);
+        return result;
     }
 
 
