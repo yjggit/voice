@@ -203,8 +203,8 @@ public class VoiceTTSService {
 
 
             } catch (Exception e) {
+                System.out.println(e.toString());
                 return "音频文件解析错误，请重新录入！！！";
-//                e.printStackTrace();
             }
         } else {
             return "";
