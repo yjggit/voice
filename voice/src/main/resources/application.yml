@@ -16,12 +16,12 @@ spring:
     default-encoding: UTF-8
 #
 #    #hibernate config
-#  jpa:
-#    database: mysql
-#    show-sql: true
-#    generate-ddl: true
-#    hibernate:
-#      ddl-auto: update
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
 
 #mybatis configs
 mybatis:
