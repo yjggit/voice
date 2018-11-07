@@ -3,7 +3,6 @@ package com.example.voice.service.impl;
 import com.example.voice.entities.MailReceiver;
 import com.example.voice.mapper.SendMailMapper;
 import com.example.voice.util.MailSendHandler;
-import com.example.voice.vo.SendMailVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

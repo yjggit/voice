@@ -11,7 +11,7 @@ spring:
     #mail config
   mail:
     username: 17313290821@163.com
-    password: yang19970923
+    password: aaaaaaaa
     host: smtp.163.com
     default-encoding: UTF-8
 #
