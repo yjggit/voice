@@ -8,7 +8,26 @@ spring:
     #?useUnicode=true&characterEncoding=utf8&useSSL=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
     username: root
     password: 123456
+    #mail config
+  mail:
+    username: 123123131@163.com
+    password: 123123131
+    host: smtp.163.com
+    default-encoding: UTF-8
+#
+#    #hibernate config
+#  jpa:
+#    database: mysql
+#    show-sql: true
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: update
 
+#mybatis configs
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
   type-aliases-package: com.example.*.vo
+
+
+
+
