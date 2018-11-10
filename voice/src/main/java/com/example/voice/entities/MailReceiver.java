@@ -26,8 +26,10 @@ public class MailReceiver implements Serializable {
 
     @Column(name = "remark",columnDefinition = "varchar(100) COMMENT '备注' ")
     private String remark;
+
     @Column(name = "gmt_create",columnDefinition = "timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '创建时间' ")
     private String gmtCreate;
+
     @Column(name = "gmt_update",columnDefinition = "timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL COMMENT '修改时间' ")
     private String gmtUpdate;
 

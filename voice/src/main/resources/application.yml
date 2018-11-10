@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8087
 
 spring:
   datasource:
@@ -10,8 +10,8 @@ spring:
     password: 123456
     #mail config
   mail:
-    username: 17313290821@163.com
-    password: aaaaaaaa
+    username: aaaaaaaa@163.com
+    password: aaaaaaaaa
     host: smtp.163.com
     default-encoding: UTF-8
 #
@@ -27,6 +27,15 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
   type-aliases-package: com.example.*.vo
+
+components:
+#  api:
+#  re-invok:
+#  times: 4
+  mail:
+    error-num-to-end-mail : 10
+#    app:
+#    name: crm-test
 
 
 
