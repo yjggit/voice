@@ -10,12 +10,11 @@ spring:
     password: 123456
     #mail config
   mail:
-    username: aaaaaaaa@163.com
-    password: aaaaaaaaa
+    username: 17313290821@163.com
+    password: yang19970923
     host: smtp.163.com
     default-encoding: UTF-8
-#
-#    #hibernate config
+    #hibernate config
   jpa:
     database: mysql
     show-sql: true

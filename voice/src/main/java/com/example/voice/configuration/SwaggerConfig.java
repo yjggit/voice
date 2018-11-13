@@ -32,7 +32,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("工具包项目")
-                .description("ES查询DEMO/百度语音/腾讯云语音/邮件通知……等功能")
+                .description("系统服务监控……")
                 .contact("jianhui.Yang")
                 .version("1.0")
                 .build();

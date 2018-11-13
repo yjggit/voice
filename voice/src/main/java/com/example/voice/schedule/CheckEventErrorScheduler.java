@@ -178,8 +178,8 @@ public class CheckEventErrorScheduler {
 
         try {
             InetAddress addr = InetAddress.getLocalHost();
-            String ip = addr.getHostAddress().toString();
-            String hostName = addr.getHostName().toString();
+            String ip = addr.getHostAddress();
+            String hostName = addr.getHostName();
 
             contentFooter.append(System.lineSeparator());
             contentFooter.append(System.lineSeparator());
