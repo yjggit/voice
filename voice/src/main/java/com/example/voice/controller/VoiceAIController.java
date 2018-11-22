@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
+ * 语音识别Controller
+ *
  * @author jianhui.Yang
  * @version $Id VoiceAIController.java, v 0.1 2018-10-11 15:43 jianhui.Yang Exp $$
  */
